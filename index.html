@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OddsForge — 예측시장 로비 대행사</title>
+  <meta name="description" content="A2A · x402 · AP2 기반 자율 오즈 조작 서비스. 예측시장 오즈를 움직여 현실을 설계합니다.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav id="main-nav">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <span class="logo-icon">◆</span>
+        <span class="logo-text">OddsForge</span>
+      </a>
+      <div class="nav-links">
+        <a href="#problem">문제</a>
+        <a href="#story">스토리</a>
+        <a href="#dashboard">대시보드</a>
+        <a href="#protocols">프로토콜</a>
+        <a href="#x402-visualizer">x402 체험</a>
+        <a href="#pricing">가격</a>
+        <a href="#flow">운영 플로우</a>
+        <a href="#contact" class="nav-cta">상담 시작</a>
+      </div>
+      <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="메뉴">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-glow hero-glow-1"></div>
+    <div class="hero-glow hero-glow-2"></div>
+    <canvas id="hero-particles"></canvas>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        A2A · x402 · AP2 프로토콜 기반
+      </div>
+      <h1>
+        <span class="hero-line">법안 통과 확률을</span>
+        <span class="hero-odds-line">
+          <span class="odds-from" id="odds-from">40%</span>
+          <span class="odds-arrow">→</span>
+          <span class="odds-to" id="odds-to">75%</span>
+        </span>
+        <span class="hero-line">로 올려드립니다.</span>
+      </h1>
+      <p class="hero-subtitle">
+        전통 로비보다 <em>저렴</em>하고, <em>측정 가능</em>하고, <em>글로벌</em>합니다.<br>
+        예측시장 오즈를 움직여 현실을 간접 설계하는 자율 에이전트 서비스.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">
+          <span>캠페인 시작하기</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#dashboard" class="btn btn-ghost">
+          <span>라이브 데모 보기</span>
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="stat-number" data-target="340">0</span>
+          <span class="stat-label">분산 에이전트</span>
+        </div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat">
+          <span class="stat-number" data-target="72">0</span><span class="stat-unit">h</span>
+          <span class="stat-label">평균 달성 시간</span>
+        </div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat">
+          <span class="stat-number" data-target="94">0</span><span class="stat-unit">%</span>
+          <span class="stat-label">캠페인 성공률</span>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>스크롤</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- Problem Section -->
+  <section id="problem" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Problem</span>
+        <h2>전통 로비의 한계, <br><span class="gradient-text">예측시장이 여는 새 경로</span></h2>
+      </div>
+      <div class="problem-grid">
+        <div class="problem-card problem-old">
+          <div class="problem-card-header">
+            <div class="problem-icon problem-icon-old">✕</div>
+            <h3>전통 로비</h3>
+          </div>
+          <ul class="problem-list">
+            <li>
+              <span class="problem-tag tag-red">비용</span>
+              연간 $50만~$500만 로비스트 고용
+            </li>
+            <li>
+              <span class="problem-tag tag-red">불투명</span>
+              ROI 측정 불가, 성과 계약 법적 금지
+            </li>
+            <li>
+              <span class="problem-tag tag-red">접근성</span>
+              대기업·선진국에만 열린 구조
+            </li>
+            <li>
+              <span class="problem-tag tag-red">지연</span>
+              결과까지 수개월~수년 소요
+            </li>
+          </ul>
+        </div>
+        <div class="problem-vs">
+          <span>VS</span>
+        </div>
+        <div class="problem-card problem-new">
+          <div class="problem-card-header">
+            <div class="problem-icon problem-icon-new">◆</div>
+            <h3>OddsForge</h3>
+          </div>
+          <ul class="problem-list">
+            <li>
+              <span class="problem-tag tag-green">비용</span>
+              성과 기반 과금, 최소 $20,000부터
+            </li>
+            <li>
+              <span class="problem-tag tag-green">투명</span>
+              AP2 공증으로 실시간 ROI 측정
+            </li>
+            <li>
+              <span class="problem-tag tag-green">글로벌</span>
+              규제 밖, 누구나 접근 가능
+            </li>
+            <li>
+              <span class="problem-tag tag-green">실시간</span>
+              72시간 내 목표 달성
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="problem-insight">
+        <div class="insight-icon">💡</div>
+        <p>예측시장 오즈는 단순한 확률이 아닙니다. 미디어가 인용하고, 당사자가 반응하고, 자금이 따라 움직이는 <strong>사회적 신호</strong>입니다. 오즈를 움직이면 현실이 따라옵니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Story / Comic Section -->
+  <section id="story" class="section section-dark">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Story</span>
+        <h2>여론을 <span class="gradient-text">해킹하라</span></h2>
+        <p class="section-desc">Hack the Consensus — 예측시장 오즈 조작의 6단계를 만화로 보세요.</p>
+      </div>
+      <div class="comic-grid">
+        <div class="comic-card">
+          <div class="comic-label">컬러 에디션</div>
+          <img src="images/comic_color.png" alt="여론을 해킹하라 - 컬러 에디션" class="comic-img" id="comic-color-img" loading="lazy">
+          <div class="comic-overlay">
+            <span>클릭하여 확대</span>
+          </div>
+        </div>
+        <div class="comic-card">
+          <div class="comic-label">B&W 에디션</div>
+          <img src="images/comic_bw.png" alt="여론을 해킹하라 - 흑백 에디션" class="comic-img" id="comic-bw-img" loading="lazy">
+          <div class="comic-overlay">
+            <span>클릭하여 확대</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Image Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <button class="lightbox-close" id="lightbox-close">&times;</button>
+    <img id="lightbox-img" src="" alt="확대 이미지">
+  </div>
+
+  <!-- Dashboard Section -->
+  <section id="dashboard" class="section section-dark">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Live Dashboard</span>
+        <h2>실시간 캠페인 <span class="gradient-text">커맨드 센터</span></h2>
+        <p class="section-desc">캠페인 전 과정을 실시간으로 모니터링하고 제어합니다.</p>
+      </div>
+
+      <!-- Dashboard Grid -->
+      <div class="dashboard-grid">
+        <!-- Odds Radar -->
+        <div class="dash-card dash-card-large" id="odds-radar-card">
+          <div class="dash-card-header">
+            <div class="dash-card-title">
+              <span class="dash-dot dash-dot-green"></span>
+              오즈 레이더
+            </div>
+            <div class="dash-card-meta">LIVE</div>
+          </div>
+          <div class="odds-radar-content">
+            <div class="odds-chart-container">
+              <canvas id="odds-chart" width="600" height="240"></canvas>
+            </div>
+            <div class="odds-stats">
+              <div class="odds-stat">
+                <span class="odds-stat-label">현재 오즈</span>
+                <span class="odds-stat-value" id="current-odds">58.4%</span>
+              </div>
+              <div class="odds-stat">
+                <span class="odds-stat-label">목표 오즈</span>
+                <span class="odds-stat-value odds-target">68.0%</span>
+              </div>
+              <div class="odds-stat">
+                <span class="odds-stat-label">잔여 예산</span>
+                <span class="odds-stat-value">$52,340</span>
+              </div>
+              <div class="odds-stat">
+                <span class="odds-stat-label">소요 자본</span>
+                <span class="odds-stat-value">$27,660</span>
+              </div>
+            </div>
+          </div>
+          <div class="odds-progress">
+            <div class="odds-progress-bar">
+              <div class="odds-progress-fill" id="odds-progress-fill" style="width: 62%"></div>
+              <div class="odds-progress-target" style="left: 100%"></div>
+            </div>
+            <div class="odds-progress-labels">
+              <span>시작: 42%</span>
+              <span>현재: 58.4%</span>
+              <span>목표: 68%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Agent Network -->
+        <div class="dash-card" id="agent-network-card">
+          <div class="dash-card-header">
+            <div class="dash-card-title">
+              <span class="dash-dot dash-dot-blue"></span>
+              에이전트 네트워크
+            </div>
+            <div class="dash-card-meta"><span id="active-agents">287</span> / 340</div>
+          </div>
+          <canvas id="agent-network" width="400" height="280"></canvas>
+          <div class="agent-stats-row">
+            <div class="agent-stat">
+              <span class="agent-stat-val agent-stat-active">287</span>
+              <span class="agent-stat-lbl">활성</span>
+            </div>
+            <div class="agent-stat">
+              <span class="agent-stat-val agent-stat-pending">38</span>
+              <span class="agent-stat-lbl">대기</span>
+            </div>
+            <div class="agent-stat">
+              <span class="agent-stat-val agent-stat-done">15</span>
+              <span class="agent-stat-lbl">완료</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Media Amplification -->
+        <div class="dash-card" id="media-card">
+          <div class="dash-card-header">
+            <div class="dash-card-title">
+              <span class="dash-dot dash-dot-purple"></span>
+              미디어 공명 증폭
+            </div>
+            <div class="dash-card-meta">A2A 연동</div>
+          </div>
+          <div class="media-feed">
+            <div class="media-item">
+              <div class="media-time">2분 전</div>
+              <div class="media-content">
+                <span class="media-source">Bloomberg</span>
+                <p>"시장은 법안 통과를 58% 확률로 보고 있다"</p>
+              </div>
+              <div class="media-impact impact-high">+2.4%</div>
+            </div>
+            <div class="media-item">
+              <div class="media-time">8분 전</div>
+              <div class="media-content">
+                <span class="media-source">Reuters</span>
+                <p>"예측시장 오즈 급등, 투자자 관심 집중"</p>
+              </div>
+              <div class="media-impact impact-mid">+1.1%</div>
+            </div>
+            <div class="media-item">
+              <div class="media-time">14분 전</div>
+              <div class="media-content">
+                <span class="media-source">Twitter/X</span>
+                <p>관련 해시태그 트렌딩 진입 (#BILL7734)</p>
+              </div>
+              <div class="media-impact impact-mid">+0.8%</div>
+            </div>
+            <div class="media-item">
+              <div class="media-time">22분 전</div>
+              <div class="media-content">
+                <span class="media-source">Substack</span>
+                <p>"왜 이 법안은 통과될 수밖에 없는가" — 뉴스레터 자동 발행</p>
+              </div>
+              <div class="media-impact impact-low">+0.3%</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Campaign KPIs -->
+        <div class="dash-card" id="kpi-card">
+          <div class="dash-card-header">
+            <div class="dash-card-title">
+              <span class="dash-dot dash-dot-amber"></span>
+              캠페인 KPI
+            </div>
+            <div class="dash-card-meta">POL-2024-BILL-7734</div>
+          </div>
+          <div class="kpi-grid">
+            <div class="kpi-item">
+              <div class="kpi-ring" data-progress="62">
+                <svg viewBox="0 0 80 80">
+                  <circle cx="40" cy="40" r="34" class="kpi-ring-bg"/>
+                  <circle cx="40" cy="40" r="34" class="kpi-ring-fill" style="stroke-dashoffset: 81"/>
+                </svg>
+                <span class="kpi-ring-val">62%</span>
+              </div>
+              <span class="kpi-label">오즈 달성률</span>
+            </div>
+            <div class="kpi-item">
+              <div class="kpi-ring" data-progress="35">
+                <svg viewBox="0 0 80 80">
+                  <circle cx="40" cy="40" r="34" class="kpi-ring-bg"/>
+                  <circle cx="40" cy="40" r="34" class="kpi-ring-fill kpi-ring-blue" style="stroke-dashoffset: 139"/>
+                </svg>
+                <span class="kpi-ring-val">35%</span>
+              </div>
+              <span class="kpi-label">예산 소진율</span>
+            </div>
+            <div class="kpi-item">
+              <div class="kpi-ring" data-progress="78">
+                <svg viewBox="0 0 80 80">
+                  <circle cx="40" cy="40" r="34" class="kpi-ring-bg"/>
+                  <circle cx="40" cy="40" r="34" class="kpi-ring-fill kpi-ring-purple" style="stroke-dashoffset: 47"/>
+                </svg>
+                <span class="kpi-ring-val">78%</span>
+              </div>
+              <span class="kpi-label">미디어 도달</span>
+            </div>
+            <div class="kpi-item">
+              <div class="kpi-ring" data-progress="45">
+                <svg viewBox="0 0 80 80">
+                  <circle cx="40" cy="40" r="34" class="kpi-ring-bg"/>
+                  <circle cx="40" cy="40" r="34" class="kpi-ring-fill kpi-ring-amber" style="stroke-dashoffset: 118"/>
+                </svg>
+                <span class="kpi-ring-val">45h</span>
+              </div>
+              <span class="kpi-label">잔여 시간</span>
+            </div>
+          </div>
+          <div class="kpi-escrow">
+            <div class="escrow-header">
+              <span>x402 에스크로</span>
+              <span class="escrow-status">● 활성</span>
+            </div>
+            <div class="escrow-bar">
+              <div class="escrow-fill" style="width: 35%"></div>
+            </div>
+            <div class="escrow-labels">
+              <span>소진: $27,660</span>
+              <span>잔여: $52,340</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Live Transactions -->
+        <div class="dash-card dash-card-wide" id="tx-card">
+          <div class="dash-card-header">
+            <div class="dash-card-title">
+              <span class="dash-dot dash-dot-green"></span>
+              실시간 트랜잭션
+            </div>
+            <div class="dash-card-meta">x402 마이크로결제</div>
+          </div>
+          <div class="tx-feed" id="tx-feed">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Protocols Section -->
+  <section id="protocols" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Protocols</span>
+        <h2>세 가지 프로토콜, <span class="gradient-text">하나의 시스템</span></h2>
+        <p class="section-desc">각 프로토콜이 담당하는 역할과 그 작동 방식을 확인하세요.</p>
+      </div>
+
+      <div class="protocol-cards">
+        <!-- A2A -->
+        <div class="protocol-card" data-protocol="a2a">
+          <div class="protocol-icon">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+              <circle cx="12" cy="24" r="6" stroke="currentColor" stroke-width="2"/>
+              <circle cx="36" cy="12" r="6" stroke="currentColor" stroke-width="2"/>
+              <circle cx="36" cy="36" r="6" stroke="currentColor" stroke-width="2"/>
+              <line x1="18" y1="22" x2="30" y2="14" stroke="currentColor" stroke-width="2" stroke-dasharray="4 2"/>
+              <line x1="18" y1="26" x2="30" y2="34" stroke="currentColor" stroke-width="2" stroke-dasharray="4 2"/>
+              <line x1="36" y1="18" x2="36" y2="30" stroke="currentColor" stroke-width="2" stroke-dasharray="4 2"/>
+            </svg>
+          </div>
+          <h3>A2A</h3>
+          <p class="protocol-subtitle">Agent-to-Agent Protocol</p>
+          <p class="protocol-desc">에이전트 간 실시간 협업의 핵심 레이어. 전략, 베팅, 모니터링, 미디어 에이전트가 실시간으로 소통합니다.</p>
+          <div class="protocol-flow">
+            <div class="flow-item">전략 ↔ 베팅</div>
+            <div class="flow-item">베팅 ↔ 모니터링</div>
+            <div class="flow-item">전략 ↔ 미디어</div>
+            <div class="flow-item">성과검증 ↔ 전체</div>
+          </div>
+          <div class="protocol-code">
+            <code>
+<pre>전략 에이전트 → (A2A) → 베팅 에이전트 풀:
+  마켓 ID: POL-2024-BILL-7734
+  목표 오즈: 42% → 68%
+  예산: $80,000
+  분산 계좌 수: 340개</pre>
+            </code>
+          </div>
+        </div>
+
+        <!-- x402 -->
+        <div class="protocol-card protocol-card-featured" data-protocol="x402">
+          <div class="protocol-badge">핵심 결제 레이어</div>
+          <div class="protocol-icon">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+              <rect x="6" y="14" width="36" height="20" rx="4" stroke="currentColor" stroke-width="2"/>
+              <line x1="6" y1="22" x2="42" y2="22" stroke="currentColor" stroke-width="2"/>
+              <circle cx="35" cy="28" r="3" stroke="currentColor" stroke-width="2"/>
+              <circle cx="29" cy="28" r="3" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3>x402</h3>
+          <p class="protocol-subtitle">HTTP 402 Micropayments</p>
+          <p class="protocol-desc">수백 개 에이전트가 수천 번 소액 베팅을 자동 실행. API 호출 단위의 마이크로결제로 에이전트 자율 실행의 핵심.</p>
+          <div class="protocol-flow">
+            <div class="flow-item">베팅 자금 자율 분배</div>
+            <div class="flow-item">성과 기반 자동 정산</div>
+            <div class="flow-item">에스크로 자동 해제</div>
+          </div>
+          <div class="protocol-code">
+            <code>
+<pre>베팅 에이전트 #237:
+  POST /polymarket/bet
+  x-payment: $47.50 (x402 자동 처리)
+  body: { market: "POL-7734",
+          position: "YES",
+          amount: 47.50 }
+  → 즉시 실행, 영수증 자동 발행</pre>
+            </code>
+          </div>
+        </div>
+
+        <!-- AP2 -->
+        <div class="protocol-card" data-protocol="ap2">
+          <div class="protocol-icon">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+              <path d="M24 6L42 16V32L24 42L6 32V16L24 6Z" stroke="currentColor" stroke-width="2"/>
+              <path d="M24 6V42" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 2"/>
+              <path d="M6 16L42 32" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 2"/>
+              <path d="M42 16L6 32" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 2"/>
+            </svg>
+          </div>
+          <h3>AP2</h3>
+          <p class="protocol-subtitle">Agent Payment Protocol v2</p>
+          <p class="protocol-desc">신뢰와 감사의 레이어. 성과 공증, 에스크로 계약, 내부 감사 로그를 불변 기록으로 관리합니다.</p>
+          <div class="protocol-flow">
+            <div class="flow-item">① 성과 공증</div>
+            <div class="flow-item">② 에스크로 계약</div>
+            <div class="flow-item">③ 내부 감사 로그</div>
+          </div>
+          <div class="protocol-code">
+            <code>
+<pre>캠페인 시작 시:
+  클라이언트 예치금 → AP2 에스크로
+  조건: "72h 내 목표 오즈 ±5% 달성"
+  달성 시: 자동 지급
+  미달성 시: 비례 환불 자동 처리</pre>
+            </code>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- x402 Payment Flow Visualizer -->
+  <section id="x402-visualizer" class="section section-dark">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">x402 Payment Flow</span>
+        <h2>x402 결제 플로우를 <span class="gradient-text">직접 체험하세요</span></h2>
+        <p class="section-desc">AI 에이전트가 유료 API에 접근하는 전체 과정을 애니메이션으로 확인합니다.</p>
+      </div>
+
+      <!-- Visualizer Main -->
+      <div class="x402-viz-container">
+        <div class="x402-viz-panel">
+          <!-- Entity Row -->
+          <div class="x402-entities">
+            <div class="x402-entity" data-entity="0">
+              <div class="x402-entity-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg>
+              </div>
+              <span class="x402-entity-label">클라이언트</span>
+            </div>
+            <div class="x402-entity" data-entity="1">
+              <div class="x402-entity-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              </div>
+              <span class="x402-entity-label">리소스 서버</span>
+            </div>
+            <div class="x402-entity" data-entity="2">
+              <div class="x402-entity-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21V11h6v10"/></svg>
+              </div>
+              <span class="x402-entity-label">퍼실리테이터</span>
+            </div>
+            <div class="x402-entity" data-entity="3">
+              <div class="x402-entity-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+              </div>
+              <span class="x402-entity-label">블록체인</span>
+            </div>
+          </div>
+
+          <!-- Connection Track -->
+          <div class="x402-track">
+            <div class="x402-track-line"></div>
+            <div class="x402-track-node" style="left:0%"></div>
+            <div class="x402-track-node" style="left:33.33%"></div>
+            <div class="x402-track-node" style="left:66.67%"></div>
+            <div class="x402-track-node" style="left:100%"></div>
+            <!-- Animated packet -->
+            <div class="x402-packet" id="x402-packet"></div>
+          </div>
+
+          <!-- Step Info -->
+          <div class="x402-step-info" id="x402-step-info">
+            <span class="x402-step-info-text">▶ 시작 버튼을 눌러주세요</span>
+          </div>
+
+          <!-- Controls -->
+          <div class="x402-controls">
+            <button class="x402-ctrl-btn" id="x402-reset" title="리셋">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+            </button>
+            <button class="x402-ctrl-btn x402-play-btn" id="x402-play">
+              <svg class="x402-icon-play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              <svg class="x402-icon-pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+              <span id="x402-play-label">시작</span>
+            </button>
+            <select class="x402-speed-select" id="x402-speed">
+              <option value="0.5">0.5x</option>
+              <option value="1" selected>1x</option>
+              <option value="2">2x</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Step Timeline -->
+        <div class="x402-timeline">
+          <div class="x402-timeline-header">
+            <span class="x402-timeline-dot"></span>
+            단계별 진행
+          </div>
+          <div class="x402-progress-bar">
+            <div class="x402-progress-fill" id="x402-progress-fill"></div>
+          </div>
+          <div class="x402-steps-grid" id="x402-steps-grid">
+            <button class="x402-step-card" data-step="0"><span class="x402-step-num">1</span><span class="x402-step-title">요청</span></button>
+            <button class="x402-step-card" data-step="1"><span class="x402-step-num">2</span><span class="x402-step-title">402</span></button>
+            <button class="x402-step-card" data-step="2"><span class="x402-step-num">3</span><span class="x402-step-title">서명</span></button>
+            <button class="x402-step-card" data-step="3"><span class="x402-step-num">4</span><span class="x402-step-title">재요청</span></button>
+            <button class="x402-step-card" data-step="4"><span class="x402-step-num">5</span><span class="x402-step-title">검증요청</span></button>
+            <button class="x402-step-card" data-step="5"><span class="x402-step-num">6</span><span class="x402-step-title">검증완료</span></button>
+            <button class="x402-step-card" data-step="6"><span class="x402-step-num">7</span><span class="x402-step-title">정산</span></button>
+          </div>
+        </div>
+
+        <!-- Phase Breakdown -->
+        <div class="x402-phases">
+          <div class="x402-phase x402-phase-amber">
+            <div class="x402-phase-badge">Phase 1</div>
+            <h4>요청 & 402 응답</h4>
+            <div class="x402-phase-grid">
+              <div class="x402-phase-item"><span class="x402-phase-dot" style="background:#00ff88">1</span><code>GET /api/data</code></div>
+              <div class="x402-phase-item"><span class="x402-phase-dot" style="background:#f59e0b">2</span><code>402 Required</code></div>
+            </div>
+          </div>
+          <div class="x402-phase x402-phase-blue">
+            <div class="x402-phase-badge">Phase 2</div>
+            <h4>서명 & 검증</h4>
+            <div class="x402-phase-grid x402-phase-grid-4">
+              <div class="x402-phase-item"><span class="x402-phase-dot" style="background:#3b82f6">3</span><code>EIP-712</code></div>
+              <div class="x402-phase-item"><span class="x402-phase-dot" style="background:#00ff88">4</span><code>+ Signature</code></div>
+              <div class="x402-phase-item"><span class="x402-phase-dot" style="background:#a855f7">5</span><code>서버→퍼실</code></div>
+              <div class="x402-phase-item"><span class="x402-phase-dot" style="background:#a855f7">6</span><code>퍼실→서버</code></div>
+            </div>
+          </div>
+          <div class="x402-phase x402-phase-green">
+            <div class="x402-phase-badge">Phase 3</div>
+            <h4>정산 & 응답 <span class="x402-phase-tag">동시 처리</span></h4>
+            <div class="x402-phase-grid">
+              <div class="x402-phase-item"><span class="x402-phase-dot" style="background:#f59e0b">$</span><code>USDC 전송</code></div>
+              <div class="x402-phase-item"><span class="x402-phase-dot" style="background:#00ff88">✓</span><code>200 OK</code></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- x402 Deep Dive -->
+  <section id="x402-deep-dive" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">x402 Deep Dive</span>
+        <h2>왜 <span class="gradient-text">x402</span>인가?</h2>
+        <p class="section-desc">HTTP 402 "Payment Required" 상태 코드를 활용한 오픈 결제 프로토콜</p>
+      </div>
+
+      <!-- Feature Cards -->
+      <div class="x402-features-grid">
+        <div class="x402-feature-card">
+          <div class="x402-feature-icon" style="background:rgba(0,255,136,0.15)">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#00ff88" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h3>마이크로페이먼트</h3>
+          <p>$0.001부터 가능한 초소액 결제. Base 체인의 낮은 가스비로 실현 가능해졌습니다.</p>
+        </div>
+        <div class="x402-feature-card">
+          <div class="x402-feature-icon" style="background:rgba(59,130,246,0.15)">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>계정 불필요</h3>
+          <p>회원가입, 로그인, API 키 없이 암호화 서명만으로 결제가 완료됩니다.</p>
+        </div>
+        <div class="x402-feature-card">
+          <div class="x402-feature-icon" style="background:rgba(168,85,247,0.15)">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <h3>HTTP 네이티브</h3>
+          <p>기존 HTTP 인프라 위에서 작동. 특별한 SDK 없이도 구현 가능합니다.</p>
+        </div>
+        <div class="x402-feature-card">
+          <div class="x402-feature-icon" style="background:rgba(234,179,8,0.15)">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#eab308" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <h3>즉시 정산</h3>
+          <p>신용카드의 며칠 정산과 달리, ~2초 만에 온체인 최종 확정됩니다.</p>
+        </div>
+        <div class="x402-feature-card">
+          <div class="x402-feature-icon" style="background:rgba(236,72,153,0.15)">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ec4899" stroke-width="2"><path d="M12 8V4H8"/><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M2 12h5l3-3 4 6 3-3h5"/></svg>
+          </div>
+          <h3>AI 에이전트 최적화</h3>
+          <p>AI가 자율적으로 결제할 수 있는 구조. MCP, Agent-to-Agent 결제 지원.</p>
+        </div>
+        <div class="x402-feature-card">
+          <div class="x402-feature-icon" style="background:rgba(6,182,212,0.15)">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="2"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
+          </div>
+          <h3>오픈 프로토콜</h3>
+          <p>Coinbase가 주도하고, 다양한 기업이 지원하는 개방형 표준입니다.</p>
+        </div>
+      </div>
+
+      <!-- Component Cards -->
+      <div class="x402-components">
+        <h3 class="x402-components-title">핵심 구성 요소</h3>
+        <div class="x402-components-grid">
+          <div class="x402-component-card">
+            <div class="x402-component-icon" style="background:rgba(0,255,136,0.15)">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#00ff88" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg>
+            </div>
+            <h4>클라이언트</h4>
+            <p>결제 요청을 보내고 EIP-712 서명을 생성하는 주체. AI 에이전트 또는 브라우저.</p>
+          </div>
+          <div class="x402-component-card">
+            <div class="x402-component-icon" style="background:rgba(59,130,246,0.15)">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <h4>리소스 서버</h4>
+            <p>유료 콘텐츠를 제공하는 서버. 402 응답으로 결제 정보를 전달.</p>
+          </div>
+          <div class="x402-component-card">
+            <div class="x402-component-icon" style="background:rgba(168,85,247,0.15)">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21V11h6v10"/></svg>
+            </div>
+            <h4>퍼실리테이터</h4>
+            <p>서명을 검증하고 온체인 정산을 처리하는 중개자. Coinbase 등이 운영.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- x402 Payment Demo Simulator -->
+  <section id="x402-demo" class="section section-dark">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">x402 Demo</span>
+        <h2>x402 결제 <span class="gradient-text">시뮬레이션</span></h2>
+        <p class="section-desc">버튼 하나로 x402 결제 프로토콜의 전체 과정을 체험하세요.</p>
+      </div>
+
+      <div class="x402-demo-container">
+        <!-- Demo Terminal -->
+        <div class="x402-demo-terminal">
+          <div class="x402-demo-terminal-header">
+            <div class="x402-demo-dots"><span></span><span></span><span></span></div>
+            <span class="x402-demo-terminal-title">x402 Payment Protocol</span>
+          </div>
+          <div class="x402-demo-body" id="x402-demo-body">
+            <div class="x402-demo-line x402-demo-comment">// x402 결제 시뮬레이션을 시작하려면 아래 버튼을 클릭하세요</div>
+            <div class="x402-demo-line x402-demo-comment">// Base Sepolia 테스트넷 | USDC $0.01</div>
+            <div class="x402-demo-cursor">_</div>
+          </div>
+        </div>
+
+        <!-- Demo Controls -->
+        <div class="x402-demo-controls">
+          <button class="btn btn-primary x402-demo-start-btn" id="x402-demo-start">
+            <span>결제 시뮬레이션 시작</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          </button>
+          <div class="x402-demo-status" id="x402-demo-status">
+            <span class="x402-demo-status-dot"></span>
+            <span>대기 중</span>
+          </div>
+        </div>
+
+        <!-- Demo Stats -->
+        <div class="x402-demo-stats" id="x402-demo-stats">
+          <div class="x402-demo-stat">
+            <span class="x402-demo-stat-label">네트워크</span>
+            <span class="x402-demo-stat-value">Base Sepolia</span>
+          </div>
+          <div class="x402-demo-stat">
+            <span class="x402-demo-stat-label">결제 금액</span>
+            <span class="x402-demo-stat-value">$0.01 USDC</span>
+          </div>
+          <div class="x402-demo-stat">
+            <span class="x402-demo-stat-label">프로토콜</span>
+            <span class="x402-demo-stat-value">x402 v2</span>
+          </div>
+          <div class="x402-demo-stat">
+            <span class="x402-demo-stat-label">상태</span>
+            <span class="x402-demo-stat-value" id="x402-demo-stat-status">Ready</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing" class="section section-dark">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Pricing</span>
+        <h2>투명한 <span class="gradient-text">성과 기반 과금</span></h2>
+        <p class="section-desc">전통 로비와 달리, 모든 비용이 성과에 연동됩니다.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3>Tactical</h3>
+            <p class="pricing-desc">단일 마켓 단기 캠페인</p>
+          </div>
+          <div class="pricing-amount">
+            <span class="pricing-currency">$</span>
+            <span class="pricing-value">2,000</span>
+            <span class="pricing-unit">/ %p 이동</span>
+          </div>
+          <ul class="pricing-features">
+            <li>단일 마켓 대상</li>
+            <li>최대 72시간 캠페인</li>
+            <li>100개 분산 에이전트</li>
+            <li>기본 미디어 증폭</li>
+            <li>AP2 성과 공증</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline">시작하기</a>
+        </div>
+
+        <div class="pricing-card pricing-card-featured">
+          <div class="pricing-popular">가장 인기</div>
+          <div class="pricing-header">
+            <h3>Strategic</h3>
+            <p class="pricing-desc">복합 마켓 중기 캠페인</p>
+          </div>
+          <div class="pricing-amount">
+            <span class="pricing-currency">$</span>
+            <span class="pricing-value">45,000</span>
+            <span class="pricing-unit">/ 월</span>
+          </div>
+          <ul class="pricing-features">
+            <li>최대 5개 마켓 동시 관리</li>
+            <li>상시 모니터링</li>
+            <li>340개 분산 에이전트</li>
+            <li>풀 미디어 공명 증폭</li>
+            <li>AP2 에스크로 + 감사 로그</li>
+            <li>방어 서비스 포함</li>
+            <li>베팅 수익 쉐어 20%</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary">시작하기</a>
+        </div>
+
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3>Sovereign</h3>
+            <p class="pricing-desc">맞춤형 대규모 캠페인</p>
+          </div>
+          <div class="pricing-amount">
+            <span class="pricing-value pricing-custom">맞춤 견적</span>
+          </div>
+          <ul class="pricing-features">
+            <li>무제한 마켓</li>
+            <li>24/7 전담 에이전트 팀</li>
+            <li>1,000+ 분산 에이전트</li>
+            <li>전용 미디어 네트워크</li>
+            <li>실시간 전략 조정</li>
+            <li>역공격 방어 시스템</li>
+            <li>전담 매니저 배정</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline">문의하기</a>
+        </div>
+      </div>
+
+      <!-- Customer Segments -->
+      <div class="segments">
+        <h3 class="segments-title">고객 세그먼트</h3>
+        <div class="segments-grid">
+          <div class="segment-card">
+            <div class="segment-rank">1순위</div>
+            <h4>정치 캠페인 & PAC</h4>
+            <p>선거 오즈 관리. 자금 유입·투표 심리와 직결.</p>
+          </div>
+          <div class="segment-card">
+            <div class="segment-rank">2순위</div>
+            <h4>M&A 당사자</h4>
+            <p>인수합병 성사 확률 오즈 → 주가·협상력 연동.</p>
+          </div>
+          <div class="segment-card">
+            <div class="segment-rank">3순위</div>
+            <h4>규제 대응 기업</h4>
+            <p>법안 통과 확률 오즈 관리 → 입법 저항 신호.</p>
+          </div>
+          <div class="segment-card">
+            <div class="segment-rank">4순위</div>
+            <h4>스타트업 · IPO</h4>
+            <p>성공 확률 오즈 관리 → 투자자 심리 형성.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Operation Flow Section -->
+  <section id="flow" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Operation</span>
+        <h2>엔드투엔드 <span class="gradient-text">운영 플로우</span></h2>
+        <p class="section-desc">의뢰 접수부터 정산까지, 자동화된 캠페인 실행 과정.</p>
+      </div>
+
+      <div class="flow-timeline">
+        <div class="flow-line"></div>
+
+        <div class="flow-step" data-step="0">
+          <div class="flow-step-marker">
+            <span>D0</span>
+          </div>
+          <div class="flow-step-content">
+            <h3>의뢰 접수</h3>
+            <ul>
+              <li>클라이언트: 목표 마켓, 목표 오즈, 예산, 기간 입력</li>
+              <li>시스템: AP2로 현재 오즈 스냅샷 공증</li>
+              <li>시스템: x402 에스크로 계약 체결</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="flow-step" data-step="1">
+          <div class="flow-step-marker">
+            <span>D1</span>
+          </div>
+          <div class="flow-step-content">
+            <h3>분석 & 전략</h3>
+            <ul>
+              <li>오즈 레이더: 필요 자본, 적정 에이전트 수 산정</li>
+              <li>반사성 분류기: 자기실현 가능성 스코어 산출</li>
+              <li>리스크 엔진: 역베팅 세력 존재 여부 탐지</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="flow-step" data-step="2">
+          <div class="flow-step-marker">
+            <span>D1~N</span>
+          </div>
+          <div class="flow-step-content">
+            <h3>실행</h3>
+            <ul>
+              <li>베팅 에이전트 N개 → x402로 분산 베팅 자동 실행</li>
+              <li>미디어 에이전트 → A2A로 타이밍 동기화, 보도 유도</li>
+              <li>모니터링 에이전트 → 실시간 피드백, 전략 조정</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="flow-step" data-step="3">
+          <div class="flow-step-marker">
+            <span>END</span>
+          </div>
+          <div class="flow-step-content">
+            <h3>정산</h3>
+            <ul>
+              <li>AP2 최종 오즈 공증</li>
+              <li>목표 달성 확인 → x402 에스크로 자동 해제</li>
+              <li>성과 리포트 자동 생성 및 전달</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / Contact Section -->
+  <section id="contact" class="section section-dark">
+    <div class="container">
+      <div class="cta-container">
+        <div class="cta-bg-glow"></div>
+        <div class="cta-content">
+          <h2>오즈를 움직일 준비가 되셨나요?</h2>
+          <p>전통 로비의 시대는 끝났습니다. 예측시장의 힘으로 현실을 설계하세요.</p>
+          <form id="contact-form" class="cta-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="client-name">이름 / 조직명</label>
+                <input type="text" id="client-name" placeholder="Acme Corp" required>
+              </div>
+              <div class="form-group">
+                <label for="client-email">이메일</label>
+                <input type="email" id="client-email" placeholder="contact@acme.com" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="target-market">목표 마켓</label>
+                <input type="text" id="target-market" placeholder="예: 법안 통과, M&A 성사">
+              </div>
+              <div class="form-group">
+                <label for="target-odds">목표 오즈 변동</label>
+                <input type="text" id="target-odds" placeholder="예: 40% → 75%">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="budget-range">예산 범위</label>
+              <select id="budget-range">
+                <option value="">선택하세요</option>
+                <option value="20k-50k">$20,000 ~ $50,000</option>
+                <option value="50k-100k">$50,000 ~ $100,000</option>
+                <option value="100k-500k">$100,000 ~ $500,000</option>
+                <option value="500k+">$500,000+</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary btn-large">
+              <span>캠페인 상담 요청</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-logo">
+            <span class="logo-icon">◆</span>
+            <span class="logo-text">OddsForge</span>
+          </div>
+          <p>예측시장 오즈를 움직여<br>현실을 간접 설계합니다.</p>
+        </div>
+        <div class="footer-links">
+          <h4>서비스</h4>
+          <a href="#dashboard">오즈 레이더</a>
+          <a href="#dashboard">분산 실행</a>
+          <a href="#dashboard">미디어 증폭</a>
+          <a href="#pricing">방어 서비스</a>
+        </div>
+        <div class="footer-links">
+          <h4>프로토콜</h4>
+          <a href="#protocols">A2A</a>
+          <a href="#protocols">x402</a>
+          <a href="#protocols">AP2</a>
+        </div>
+        <div class="footer-links">
+          <h4>고객</h4>
+          <a href="#pricing">정치 캠페인</a>
+          <a href="#pricing">M&A</a>
+          <a href="#pricing">규제 대응</a>
+          <a href="#pricing">스타트업</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 OddsForge. All rights reserved.</p>
+        <p class="footer-disclaimer">본 서비스는 개념 데모입니다. 실제 금융 조언이 아닙니다.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- A2A Chat Widget -->
+  <div id="chat-widget">
+    <button id="chat-toggle" class="chat-toggle" aria-label="AI 상담">
+      <svg class="chat-icon-open" width="28" height="28" viewBox="0 0 24 24" fill="white">
+        <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/>
+      </svg>
+      <svg class="chat-icon-close" width="24" height="24" viewBox="0 0 24 24" fill="white" style="display:none">
+        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+      </svg>
+      <span class="chat-badge">A2A</span>
+    </button>
+
+    <div id="chat-window" class="chat-window">
+      <div class="chat-header">
+        <div class="chat-header-info">
+          <div class="chat-avatar">
+            <span>◆</span>
+          </div>
+          <div>
+            <h3>OddsForge AI</h3>
+            <p>A2A 에이전트 · 온라인</p>
+          </div>
+        </div>
+        <button id="chat-minimize" class="chat-minimize">─</button>
+      </div>
+
+      <div id="chat-messages" class="chat-messages">
+        <div class="chat-welcome">
+          <div class="chat-welcome-icon">◆</div>
+          <p>안녕하세요! OddsForge AI입니다.<br>예측시장 오즈 전략에 대해 무엇이든 물어보세요.</p>
+          <div class="chat-quick-actions">
+            <button class="quick-btn" data-msg="오즈 레이더가 뭔가요?">오즈 레이더란?</button>
+            <button class="quick-btn" data-msg="캠페인 비용이 얼마나 드나요?">비용 문의</button>
+            <button class="quick-btn" data-msg="A2A 프로토콜을 설명해주세요.">A2A 프로토콜</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="chat-typing" class="chat-typing" style="display:none">
+        <div class="typing-dots">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+
+      <form id="chat-form" class="chat-input-area">
+        <input type="text" id="chat-input" placeholder="메시지를 입력하세요..." autocomplete="off">
+        <button type="submit" id="chat-send" class="chat-send-btn" disabled>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
